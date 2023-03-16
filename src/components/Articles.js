@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { getArticle } from '../api/getArticle'
+import './Articles.css'
+import { Article } from './Article'
 
 export const Articles = () => {
   const [loading , setLoading] = useState(true)
@@ -15,12 +17,15 @@ export const Articles = () => {
   }, [])
 
   return (
-    <div>
-      <h1>Articles</h1>
+    <div className="articles">
+      <p className="title">All articles</p>
       {loading ? (
         <p>Loading...</p>
       ) : (
-        <div>{articles.forEach(article => console.log(article))}</div>
+        <div className="allArticles">
+          {articles.map((article, index) => (
+            <Article article={article} key={index} />
+        ))}</div>
       )}
     </div>
   )
