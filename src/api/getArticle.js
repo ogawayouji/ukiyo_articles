@@ -11,6 +11,9 @@ export const getArticle = () => {
     fetch(endpoint, options)
       .then((res) => res.json())
       .then((data) => resolve(data))
-      .catch(err => console.log(err))
+      .catch((err) => {
+        console.log(err)
+        console.log(res)
+      })
   })
 }
