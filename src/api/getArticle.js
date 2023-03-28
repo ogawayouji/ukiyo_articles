@@ -9,10 +9,7 @@ export const getArticle = () => {
 
   return new Promise((resolve, reject) => {
     fetch(endpoint, options)
-      .then((res) => {
-        console.log(res)
-        res.json()
-      })
+      .then((res) => res.json())
       .then((data) => resolve(data))
       .catch((err) => console.log(err))
   })
