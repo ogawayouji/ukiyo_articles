@@ -1,5 +1,5 @@
 export const getArticle = () => {
-  const endpoint = "/api/v1/articles"
+  const endpoint = process.env.MICROCMS_URL + "/api/v1/articles"
   const options = {
     headers: {
       "X-MICROCMS-API-KEY": process.env.X_MICROCMS_API_KEY
