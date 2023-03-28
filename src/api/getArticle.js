@@ -10,11 +10,14 @@ export const getArticle = () => {
   return new Promise((resolve, reject) => {
     fetch(endpoint, options)
       .then((res) => {
-        console.log(res)
+        resClone = res.clone()
         console.log(res.json())
-        res.json()
+        return res.json()
       })
       .then((data) => resolve(data))
-      .catch((err) => console.log(err))
+      .catch((err) => {
+        console.log(err)
+        console.log(resClone.text())
+      })
   })
 }
