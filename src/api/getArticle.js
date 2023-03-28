@@ -6,7 +6,7 @@ export const getArticle = () => {
     },
     method: 'GET'
   }
-
+  var resClone
   return new Promise((resolve, reject) => {
     fetch(endpoint, options)
       .then((res) => {
