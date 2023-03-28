@@ -8,6 +8,7 @@ export const getArticle = () => {
   }
   var resClone
   return new Promise((resolve, reject) => {
+    console.log(endpoint)
     fetch(endpoint, options)
       .then((res) => {
         resClone = res.clone()
