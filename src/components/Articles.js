@@ -10,7 +10,7 @@ export const Articles = () => {
   useEffect(() => {
     async function fetchData() {
       let res = await getArticle()
-      console.log(res)
+      console.log(res.contents)
       setArticles(res.contents)
       setLoading(false)
     }
